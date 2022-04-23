@@ -1,3 +1,7 @@
-const editLocations = () => {};
+import { logger } from '../../utils'
 
-export default editLocations;
+const editLocations = () => {
+  logger.title('Location Report')
+}
+
+export default editLocations

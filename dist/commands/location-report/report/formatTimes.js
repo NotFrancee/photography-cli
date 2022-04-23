@@ -10,7 +10,6 @@ const getHourAndMinute = (time) => {
 };
 const getTimespan = (start, end) => {
     const difference = (end.getTime() - start.getTime()) / (1000 * 60);
-    console.log({ difference, computed: Math.floor(difference * 100) / 100 });
     return Math.floor(difference * 100) / 100;
 };
 export { getHourAndMinute, getTimespan };

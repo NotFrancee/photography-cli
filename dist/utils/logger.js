@@ -3,8 +3,8 @@ const title = (text) => {
     const title = chalk.red.bold(text);
     console.log(title);
 };
-const subtitle = (text, color) => {
-    const subtitle = chalk.bold(text);
+const subtitle = (text) => {
+    const subtitle = chalk.redBright.bold(text);
     console.log(subtitle);
 };
 export default { title, subtitle };

@@ -1,3 +1,6 @@
-const editLocations = () => { };
+import { logger } from '../../utils';
+const editLocations = () => {
+    logger.title('Location Report');
+};
 export default editLocations;
 //# sourceMappingURL=index.js.map

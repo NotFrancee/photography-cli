@@ -1,6 +1,6 @@
 #!/usr/bin/env node --experimental-specifier-resolution=node
 import { Command } from 'commander';
-import { editLocations, getLocationReport } from './commands';
+import { checklist, editLocations, getLocationReport } from './commands';
 import clear from 'clear';
 import { logger } from './utils';
 import figlet from 'figlet';
@@ -19,5 +19,9 @@ cli
     .command('locations')
     .description('Edit your saved Locations')
     .action(editLocations);
+cli
+    .command('checklist')
+    .description('Get a checklist of all the things you should bring with you on a shoot day')
+    .action(checklist);
 cli.parse();
 //# sourceMappingURL=index.js.map

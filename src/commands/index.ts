@@ -1,4 +1,5 @@
-import getLocationReport from './location-report';
-import editLocations from './locations';
+import getLocationReport from './location-report'
+import editLocations from './locations'
+import checklist from './checklist'
 
-export { getLocationReport, editLocations };
+export { getLocationReport, editLocations, checklist }

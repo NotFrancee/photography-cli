@@ -1,4 +1,5 @@
 import getLocationReport from './location-report';
 import editLocations from './locations';
-export { getLocationReport, editLocations };
+import checklist from './checklist';
+export { getLocationReport, editLocations, checklist };
 //# sourceMappingURL=index.js.map
