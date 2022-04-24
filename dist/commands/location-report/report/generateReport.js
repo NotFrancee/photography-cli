@@ -1,8 +1,9 @@
 import { getHourAndMinute, getTimespan } from './formatTimes';
-const generateReport = ({ sunrise, sunriseEnd, goldenHourEnd, goldenHour, solarNoon, sunsetStart, sunset, sunAtThirdMorning, sunAtThirdEvening, sunAtHalfMorning, sunAtHalfEvening, }) => `
-  Here is your report!
+const morningData = ({ sunrise, sunriseEnd, sunAtThirdMorning, sunAtHalfMorning, goldenHourEnd, solarNoon, }) => {
+    const sunriseTimeframe = `from ${getHourAndMinute(sunrise)} to ${getHourAndMinute(sunriseEnd)}`;
+    return `
     - Sunrise
-      - TimeFrame: from ${getHourAndMinute(sunrise)} to ${getHourAndMinute(sunriseEnd)}
+      - Timeframe: ${sunriseTimeframe}
       - Total Duration: ${getTimespan(sunrise, sunriseEnd)} minutes
       - Sun at 30 Degrees: ${getHourAndMinute(sunAtThirdMorning)}
       - Sun at 45 Degrees: ${getHourAndMinute(sunAtHalfMorning)}
@@ -10,13 +11,23 @@ const generateReport = ({ sunrise, sunriseEnd, goldenHourEnd, goldenHour, solarN
 
     - Day
       - Sun will be at its highest at ${getHourAndMinute(solarNoon)}
-
+`;
+};
+const eveningData = ({ sunsetStart, sunset, sunAtThirdEvening, sunAtHalfEvening, goldenHour, }) => {
+    const sunsetTimeframe = `from ${getHourAndMinute(sunsetStart)} to ${getHourAndMinute(sunset)}`;
+    return `
     - Sunset
-      - Timeframe: from ${getHourAndMinute(sunsetStart)} to ${getHourAndMinute(sunset)}
+      - Timeframe: ${sunsetTimeframe}
       - Total Duration: ${getTimespan(sunsetStart, sunset)} minutes
       - Sun at 30 Degrees: ${getHourAndMinute(sunAtThirdEvening)}
       - Sun at 45 Degrees: ${getHourAndMinute(sunAtHalfEvening)}
       - Evening Golden Hour: ${getHourAndMinute(goldenHour)}
+  `;
+};
+const generateReport = (data) => `
+  Here is your report!
+    ${morningData(data)}
+    ${eveningData(data)}
 `;
 export default generateReport;
 //# sourceMappingURL=generateReport.js.map
