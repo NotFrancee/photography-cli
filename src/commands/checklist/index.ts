@@ -1,9 +1,9 @@
 import { logger } from '../../utils'
-import checklistPrompt from './checklistPrompt'
+import toggleChecklist from './toggleChecklist'
 
 const checklist = () => {
   logger.subtitle('Checklist')
-  checklistPrompt()
+  toggleChecklist()
 }
 
 export default checklist
